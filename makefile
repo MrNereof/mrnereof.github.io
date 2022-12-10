@@ -9,6 +9,6 @@ help:  ## Display this help
 	@echo "I'll never make a help"
 
 minify:
-	minify -b index.html -o dist/index.html
+	minify -b index.html -o docs/index.html
 dev:
-	minify -wb index.html -o dist/index.html
+	minify -wb index.html -o docs/index.html

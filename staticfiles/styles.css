@@ -27,16 +27,21 @@ header {
     margin-right: 20px;
 }
 #content {
-    margin-top: 100px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 #centrify {
+    margin-top: 100px;
     display: flex;
     justify-content: center;
     height: 75%;
     align-items: center;
+}
+
+#painting {
+    margin-top: 100px;
 }
 
 a{
@@ -85,6 +90,7 @@ hr {
 }
 
 .projects {
+    margin-top: 100px;
     display: flex;
     flex-direction: column;
     gap: 1.2em;
@@ -135,6 +141,12 @@ hr {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+}
+
+#contact-data {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1em;
 }
 
 @media only screen and (max-width: 800px) {

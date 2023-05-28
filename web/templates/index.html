@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<img alt="{{ painting.name }}" src="{{ painting.image.url }}" width="75%">
+<hr>
+<blockquote>
+    “{{ painting.name }}”
+    <span>{{ painting.author }}</span>
+</blockquote>
+{% endblock %}

@@ -85,7 +85,7 @@ blockquote span::before{
 hr {
     border: 0;
     height: 1px;
-    width: 30%;
+    width: 100%;
     position: relative;
     background: var(--text-color);
 }

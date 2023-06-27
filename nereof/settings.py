@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'analytical',
     'ckeditor',
 
     'web',
@@ -147,3 +148,6 @@ MEDIA_ROOT = BASE_DIR / 'files'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+YANDEX_METRICA_COUNTER_ID = '94127264'

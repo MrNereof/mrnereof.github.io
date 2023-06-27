@@ -4,4 +4,4 @@ django-jazzmin==2.6.0
 django-ckeditor==6.5.1
 python-dotenv==1.0.0
 whitenoise==6.4.0
-django-analytical=3.1.0
+django-analytical==3.1.0

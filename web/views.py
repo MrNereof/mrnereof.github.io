@@ -1,4 +1,4 @@
-from django.views.generic import TemplateView, ListView
+from django.views.generic import TemplateView, ListView, DetailView
 from web.models import Painting, Project
 import random
 
@@ -22,6 +22,12 @@ class ProjectsView(ListView):
     template_name = 'projects.html'
     queryset = Project.objects.order_by('priority')
     context_object_name = 'projects'
+
+
+class ProjectView(DetailView):
+    template_name = 'project.html'
+    model = Project
+    context_object_name = 'project'
 
 
 class ContactView(TemplateView):

@@ -20,6 +20,7 @@ class Project(models.Model):
         verbose_name = "Проект"
         verbose_name_plural = "Проекты"
 
+    slug = models.SlugField(default="", null=False)
     name = models.CharField(max_length=50, verbose_name="Название")
     description = RichTextField(verbose_name="Описание")
     image = models.ImageField(upload_to="projects", blank=True, verbose_name="Изображение")

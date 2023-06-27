@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Projects{% endblock %}
+
+{% block content %}
+    <div class="projects">
+        <div class="project">
+            {% if project.image %}
+                <img alt="{{ project.name }}" src="{{ project.image.url }}">
+            {% endif %}
+            <div class="information">
+                <div class="text">
+                    <span id="title">{{ project.name }}</span>
+                    <span id="description">{{ project.description | safe | linebreaks }}</span>
+                </div>
+                <div id="link">{% if project.link %}<a target="_blank" href="{{ project.link }}">Read more</a>{% else %}<span>Coming soon...</span>{% endif %}</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -14,7 +14,7 @@
                         <span id="title">{{ project.name }}</span>
                         <span id="description">{{ project.description | safe | linebreaks }}</span>
                     </div>
-                    <div id="link">{% if project.link %}<a target="_blank" href="{{ project.link }}">Read more</a>{% else %}<span>Coming soon...</span>{% endif %}</div>
+                    <div id="link">{% if project.slug %}<a href="{{ project.slug }}">Read more</a>{% elif project.link %}<a target="_blank" href="{{ project.link }}">Read more</a>{% else %}<span>Coming soon...</span>{% endif %}</div>
                 </div>
             </div>
         {% empty %}

@@ -151,3 +151,23 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 YANDEX_METRICA_COUNTER_ID = '94127264'
+
+if not DEBUG:
+    import sentry_sdk
+    from sentry_sdk.integrations.django import DjangoIntegration
+
+    sentry_sdk.init(
+        dsn="https://a44d3617306742dfbda39a8116ca3ccb@o1240301.ingest.sentry.io/4505431847665664",
+        integrations=[
+            DjangoIntegration(),
+        ],
+
+        # Set traces_sample_rate to 1.0 to capture 100%
+        # of transactions for performance monitoring.
+        # We recommend adjusting this value in production.
+        traces_sample_rate=1.0,
+
+        # If you wish to associate users to errors (assuming you are using
+        # django.contrib.auth) you may enable sending PII data.
+        send_default_pii=True
+    )

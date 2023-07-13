@@ -1,9 +1,6 @@
-from django.views.generic import TemplateView, ListView, DetailView, RedirectView
-from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.views.generic import TemplateView, ListView, DetailView
 from web.models import Painting, Project
-from django.conf import settings
 import random
-import os
 
 
 class IndexView(TemplateView):
@@ -35,14 +32,3 @@ class ProjectView(DetailView):
 
 class ContactView(TemplateView):
     template_name = 'contact.html'
-
-
-class ReloadView(LoginRequiredMixin, UserPassesTestMixin, RedirectView):
-    to = "/"
-
-    def test_func(self):
-        return self.request.user.is_superuser
-
-    def get(self, *args, **kwargs):
-        os.system(settings.BASE_DIR / "update.sh")
-        return super().get(*args, **kwargs)

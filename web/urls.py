@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from web.views import IndexView, AboutView, ProjectsView, ProjectView, ContactView, ReloadView
+from web.views import IndexView, AboutView, ProjectsView, ProjectView, ContactView
 
 urlpatterns = [
     path('', IndexView.as_view(), name='index'),
@@ -24,5 +24,4 @@ urlpatterns = [
     path('projects/', ProjectsView.as_view(), name='projects'),
     path('projects/<slug:slug>/', ProjectView.as_view(), name='project'),
     path('contact/', ContactView.as_view(), name='contact'),
-    path('reload/', ReloadView.as_view(), name='reload'),
 ]

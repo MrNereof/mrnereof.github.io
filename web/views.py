@@ -5,6 +5,7 @@ import random
 
 class IndexView(TemplateView):
     template_name = 'index.html'
+    extra_context = {"title": "💀"}
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -16,12 +17,14 @@ class IndexView(TemplateView):
 
 class AboutView(TemplateView):
     template_name = 'about.html'
+    extra_context = {"title": "About"}
 
 
 class ProjectsView(ListView):
     template_name = 'projects.html'
     queryset = Project.objects.order_by('priority')
     context_object_name = 'projects'
+    extra_context = {"title": "Projects"}
 
 
 class ProjectView(DetailView):
@@ -29,6 +32,11 @@ class ProjectView(DetailView):
     model = Project
     context_object_name = 'project'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = self.get_object().name
+
 
 class ContactView(TemplateView):
     template_name = 'contact.html'
+    extra_context = {"title": "Contact"}

@@ -2,11 +2,18 @@
 
 <html>
     <head>
-        <title>{% block title %}MrNereof{% endblock %}</title>
+        <title>{% block title %}{% if title %}{{ title }}{% else %}MrNereof{% endif %}{% endblock %}</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{% static 'styles.css' %}">
         <link rel="icon" href="{% static 'favicon.ico' %}">
+
+        <meta property="og:title" content={% if title %}{{ title }}{% else %}MrNereof{% endif %}>
+        <meta property="og:site_name" content=MrNereof>
+        <meta property="og:url" content=https://nereof.com>
+        <meta property="og:description" content="Idk what I should write here.">
+        <meta property="og:type" content=website>
+        <meta property="og:image" content={{ request.scheme }}://{{ request.get_host }}{% static 'logo.jpg' %}>
 
         {% yandex_metrica %}
     </head>

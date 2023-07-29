@@ -8,6 +8,7 @@ from pathlib import Path
 
 def main():
     """Run administrative tasks."""
+    print(Path(__file__).resolve().parent / ".env")
     load_dotenv(Path(__file__).resolve().parent / ".env")
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'nereof.settings')
     try:

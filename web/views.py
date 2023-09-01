@@ -1,4 +1,5 @@
 from django.views.generic import TemplateView, ListView, DetailView
+from django.http import HttpResponseRedirect
 from web.models import Painting, Project
 import random
 
@@ -36,6 +37,12 @@ class ProjectView(DetailView):
         context = super().get_context_data(**kwargs)
         context['title'] = self.get_object().name
         return context
+
+    def get(self, *args, **kwargs):
+        response = super().get(*args, **kwargs)
+        if self.object.redirect and self.object.link:
+            return HttpResponseRedirect(self.object.link)
+        return response
 
 
 class ContactView(TemplateView):

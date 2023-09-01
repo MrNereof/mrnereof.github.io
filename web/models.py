@@ -25,6 +25,7 @@ class Project(models.Model):
     description = RichTextField(verbose_name="Описание")
     image = models.ImageField(upload_to="projects", blank=True, verbose_name="Изображение")
     link = models.URLField(blank=True, verbose_name="Ссылка")
+    redirect = models.BooleanField(default=False, blank=True, verbose_name="Редирект")
     priority = models.IntegerField(blank=True, default=100, verbose_name="Приоритет")
 
     def __str__(self):

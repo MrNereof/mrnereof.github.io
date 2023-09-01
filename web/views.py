@@ -35,6 +35,7 @@ class ProjectView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = self.get_object().name
+        return context
 
 
 class ContactView(TemplateView):
